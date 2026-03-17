@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<!--
+  ╔══════════════════════════════════════════════════════════════╗
+  ║  index.html — Page d'Accueil                                 ║
+  ║  Site : Nexora — Agence Digitale (entreprise fictive)        ║
+  ║  TP3 HTML5 + CSS3 — Auteure : Nada Elhattab                 ║
+  ║  ENSET Mohammedia — Module C3                                ║
+  ╚══════════════════════════════════════════════════════════════╝
+
+  STRUCTURE DE LA PAGE :
+  1. <head>    → métadonnées SEO, liens CSS, Open Graph
+  2. <header>  → navigation sticky
+  3. <main>    → contenu principal
+     ├── <section> Hero
+     ├── <section> Présentation
+     ├── <section> Services
+     ├── <section> Vidéo
+     └── <section> Témoignages
+  4. <footer>  → plan du site, mentions légales
+-->
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!--
+    ── MÉTADONNÉES SEO ─────────────────────────────────────
+    Ces balises aident les moteurs de recherche (Google…)
+    à comprendre et indexer votre page.
+    title       → titre affiché dans l'onglet + résultats Google
+    description → description dans les résultats Google
+    keywords    → mots-clés (moins utilisés aujourd'hui)
+  ────────────────────────────────────────────────────────── -->
+  <title>Nexora — Agence Digitale | Création Web & Solutions Cloud</title>
+  <meta name="description" content="Nexora est une agence digitale spécialisée en création web, développement d'applications et solutions cloud. Donnez vie à vos projets numériques.">
+  <meta name="keywords"    content="agence digitale, création site web, développement web, cloud, applications mobiles, Maroc">
+  <meta name="author"      content="Nada Elhattab">
+
+  <!--
+    ── OPEN GRAPH ──────────────────────────────────────────
+    Balises OG = contrôlent l'aperçu de votre page quand elle
+    est partagée sur LinkedIn, Facebook, WhatsApp, Twitter…
+    og:title → titre de l'aperçu
+    og:description → description de l'aperçu
+    og:image → image de l'aperçu
+    og:url   → URL canonique de la page
+  ────────────────────────────────────────────────────────── -->
+  <meta property="og:title"       content="Nexora — Agence Digitale">
+  <meta property="og:description" content="Création web, applications et solutions cloud sur mesure.">
+  <meta property="og:type"        content="website">
+  <meta property="og:url"         content="https://c3-na-elhattab.enset.ma/tp3/">
+  <meta property="og:image"       content="https://c3-na-elhattab.enset.ma/tp3/images/og-accueil.svg">
+  <meta property="og:locale"      content="fr_FR">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:title"       content="Nexora — Agence Digitale">
+  <meta name="twitter:description" content="Création web, applications et solutions cloud sur mesure.">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!--
+    ── LIEN CSS EXTERNE ────────────────────────────────────
+    On lie notre fichier CSS ici.
+    rel="stylesheet" → type de fichier lié
+    href="..."       → chemin vers le fichier
+    Toutes les pages ont ce même lien → design uniforme !
+  ────────────────────────────────────────────────────────── -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <!-- Lien d'accessibilité : permet d'aller directement au contenu -->
+  <a href="#contenu-principal" class="skip-lien">Aller au contenu</a>
+
+  <!-- ══════════════ HEADER + NAV ══════════════
+    <header> = balise sémantique pour l'en-tête
+    <nav>    = balise sémantique pour la navigation
+  ═══════════════════════════════════════════════ -->
+  <header class="site-header" role="banner">
+    <div class="nav-interieur">
+      <a href="index.html" class="logo" aria-label="Nexora – Accueil">
+        Nexora<span>.</span>
+      </a>
+
+      <nav class="nav-liens" aria-label="Navigation principale">
+        <a href="index.html" class="active" aria-current="page">Accueil</a>
+        <a href="pages/about.html">À propos</a>
+        <a href="pages/services.html">Services</a>
+        <a href="pages/gallery.html">Galerie</a>
+        <a href="pages/contact.html">Contact</a>
+        <a href="pages/contact.html" class="btn-nav">Devis gratuit</a>
+      </nav>
+
+      <button class="burger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="menu-mobile">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+    <nav class="nav-mobile" id="menu-mobile" aria-label="Menu mobile">
+      <a href="index.html">Accueil</a>
+      <a href="pages/about.html">À propos</a>
+      <a href="pages/services.html">Services</a>
+      <a href="pages/gallery.html">Galerie</a>
+      <a href="pages/contact.html">Contact</a>
+    </nav>
+  </header>
+
+
+  <!-- ══════════════ MAIN ══════════════
+    <main> = contenu principal de la page.
+    Un seul <main> par page.
+    id → permet au skip-lien d'y accéder directement.
+  ════════════════════════════════════ -->
+  <main id="contenu-principal">
+
+    <!-- ── SECTION 1 : HERO ───────────────────────────────
+      La section d'accueil remplit presque tout l'écran.
+      Le fond (image + dégradé) est géré en CSS.
+      aria-labelledby lie la section à son titre h1.
+    ──────────────────────────────────────────────────── -->
+    <section class="hero" aria-labelledby="titre-hero">
+      <div class="hero-contenu">
+        <!-- Étiquette colorée au-dessus du titre -->
+        <span class="etiquette animer">🚀 Agence Digitale · Maroc</span>
+
+        <!-- h1 = titre principal de la page (un seul h1 par page !) -->
+        <h1 id="titre-hero" class="animer animer-1">
+          Votre vision,<br>notre expertise digitale
+        </h1>
+
+        <p class="animer animer-2">
+          Nexora accompagne les entreprises dans leur transformation numérique —
+          de la conception à la livraison, avec passion et précision.
+        </p>
+
+        <!-- Boutons d'action -->
+        <div class="hero-actions animer animer-3">
+          <a href="pages/services.html" class="btn btn-primaire">Nos services</a>
+          <a href="pages/contact.html"  class="btn btn-contour">Contactez-nous</a>
+        </div>
+
+        <!-- Chiffres clés (décoratifs) -->
+        <div class="hero-stats animer animer-4" aria-label="Chiffres clés">
+          <div class="stat-item">
+            <div class="stat-valeur">80+</div>
+            <div class="stat-label">Projets livrés</div>
+          </div>
+          <div class="stat-sep" aria-hidden="true"></div>
+          <div class="stat-item">
+            <div class="stat-valeur">50+</div>
+            <div class="stat-label">Clients satisfaits</div>
+          </div>
+          <div class="stat-sep" aria-hidden="true"></div>
+          <div class="stat-item">
+            <div class="stat-valeur">5</div>
+            <div class="stat-label">Années d'expérience</div>
+          </div>
+          <div class="stat-sep" aria-hidden="true"></div>
+          <div class="stat-item">
+            <div class="stat-valeur">98%</div>
+            <div class="stat-label">Satisfaction client</div>
+          </div>
+        </div>
+      </div>
+    </section><!-- fin hero -->
+
+
+    <!-- ── SECTION 2 : PRÉSENTATION RAPIDE ───────────────
+      <section> = groupe thématique de contenu.
+      Chaque section a un aria-labelledby lié à son h2.
+    ──────────────────────────────────────────────────── -->
+    <section class="section fond-gris" aria-labelledby="titre-presentation">
+      <div class="conteneur">
+        <div class="grille-2" style="align-items:center;gap:4rem">
+
+          <!-- Texte de présentation -->
+          <div class="a-reveler">
+            <span class="etiquette">Qui sommes-nous</span>
+            <h2 id="titre-presentation">Une agence digitale qui fait la différence</h2>
+            <p>
+              Fondée en 2019, <strong>Nexora</strong> est une agence digitale basée à Casablanca.
+              Notre équipe de 12 experts passionnés crée des solutions web, mobile et cloud
+              qui propulsent vos activités vers de nouveaux horizons.
+            </p>
+            <p>
+              Nous croyons que chaque entreprise mérite une présence digitale à la hauteur
+              de ses ambitions — peu importe sa taille ou son secteur.
+            </p>
+            <a href="pages/about.html" class="btn btn-secondaire" style="margin-top:1rem">
+              Découvrir notre histoire →
+            </a>
+          </div>
+
+          <!-- Illustration / image -->
+          <div class="a-reveler" style="transition-delay:0.15s">
+            <!-- On utilise un SVG inline comme placeholder d'image -->
+            <div style="
+              background: linear-gradient(135deg, var(--vert-clair), #d1fae5);
+              border-radius: 20px; padding: 3rem;
+              text-align: center; border: 1px solid rgba(13,159,110,0.15)
+            " role="img" aria-label="Illustration de l'équipe Nexora">
+              <div style="font-size:5rem;margin-bottom:1rem">💻</div>
+              <div style="font-size:0.85rem;color:var(--vert);font-weight:600">
+                Nexora Digital Team
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ── SECTION 3 : SERVICES ──────────────────────────
+      Grille de 4 cartes service.
+      Chaque carte est un <article> (contenu indépendant).
+    ──────────────────────────────────────────────────── -->
+    <section class="section" aria-labelledby="titre-services">
+      <div class="conteneur">
+        <div class="entete-section">
+          <span class="etiquette">Ce que nous faisons</span>
+          <h2 id="titre-services">Nos expertises</h2>
+          <p>Des solutions digitales complètes, de la stratégie à la livraison.</p>
+        </div>
+
+        <!-- Grille 4 colonnes de cartes -->
+        <div class="grille-4">
+
+          <!-- Chaque article = une carte service indépendante -->
+          <article class="carte-service a-reveler" aria-labelledby="svc-web">
+            <div class="icone-service" aria-hidden="true">🌐</div>
+            <h3 id="svc-web">Développement Web</h3>
+            <p>Sites vitrines, e-commerce et applications web modernes et accessibles.</p>
+            <a href="pages/services.html" class="lien-service">En savoir plus →</a>
+          </article>
+
+          <article class="carte-service a-reveler" style="transition-delay:0.1s" aria-labelledby="svc-mobile">
+            <div class="icone-service" aria-hidden="true">📱</div>
+            <h3 id="svc-mobile">Applications Mobiles</h3>
+            <p>Apps iOS et Android natives ou cross-platform, performantes et intuitives.</p>
+            <a href="pages/services.html" class="lien-service">En savoir plus →</a>
+          </article>
+
+          <article class="carte-service a-reveler" style="transition-delay:0.2s" aria-labelledby="svc-cloud">
+            <div class="icone-service" aria-hidden="true">☁️</div>
+            <h3 id="svc-cloud">Cloud & DevOps</h3>
+            <p>Migration cloud, infrastructure scalable et pipelines CI/CD automatisés.</p>
+            <a href="pages/services.html" class="lien-service">En savoir plus →</a>
+          </article>
+
+          <article class="carte-service a-reveler" style="transition-delay:0.3s" aria-labelledby="svc-data">
+            <div class="icone-service" aria-hidden="true">📊</div>
+            <h3 id="svc-data">Data & Analytics</h3>
+            <p>Tableaux de bord, pipelines de données et intelligence décisionnelle.</p>
+            <a href="pages/services.html" class="lien-service">En savoir plus →</a>
+          </article>
+
+        </div>
+
+        <div style="text-align:center;margin-top:3rem">
+          <a href="pages/services.html" class="btn btn-primaire">Voir tous nos services</a>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ── SECTION 4 : VIDÉO DE PRÉSENTATION ─────────────
+      <video> = balise HTML5 pour intégrer une vidéo.
+      Attributs importants :
+        autoplay   → démarre automatiquement
+        muted      → sans son (obligatoire pour autoplay)
+        loop       → recommence en boucle
+        playsinline → lecture inline sur iOS (pas plein écran)
+        controls   → affiche les contrôles (optionnel ici)
+      <track>    → sous-titres d'accessibilité
+      <source>   → source de la vidéo avec type MIME
+    ──────────────────────────────────────────────────── -->
+    <section class="section-video" aria-labelledby="titre-video">
+      <div class="video-grille">
+
+        <!-- Texte -->
+        <div class="a-reveler">
+          <span class="etiquette">Comment ça marche</span>
+          <h2 id="titre-video">Notre approche en 3 étapes</h2>
+          <p>
+            De la découverte au déploiement, notre processus agile garantit
+            une livraison de qualité dans les délais et le budget convenus.
+          </p>
+          <p>
+            Chaque projet commence par une phase de découverte approfondie
+            pour bien comprendre vos besoins avant d'écrire la première ligne de code.
+          </p>
+          <a href="pages/about.html" class="btn btn-primaire" style="margin-top:1rem">
+            Notre méthodologie
+          </a>
+        </div>
+
+        <!-- Vidéo -->
+        <div class="a-reveler" style="transition-delay:0.15s">
+          <div class="video-enveloppe">
+            <!--
+              La vidéo utilise une source externe libre de droits.
+              En production, vous mettriez votre propre vidéo dans images/
+              <source src="../images/video-presentation.mp4" type="video/mp4">
+            -->
+            <video
+              autoplay
+              muted
+              loop
+              playsinline
+              title="Présentation de l'agence Nexora"
+              aria-label="Vidéo de présentation de l'agence Nexora"
+            >
+              <!-- Source principale MP4 -->
+              <source
+                src="https://www.w3schools.com/html/mov_bbb.mp4"
+                type="video/mp4"
+              >
+              <!-- Piste de sous-titres (accessibilité) -->
+              <track kind="captions" srclang="fr" label="Français">
+              <!-- Message de repli si la vidéo ne se charge pas -->
+              <p>
+                Votre navigateur ne supporte pas la lecture de vidéo HTML5.
+                <a href="pages/about.html">Découvrez notre approche ici.</a>
+              </p>
+            </video>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ── SECTION 5 : TÉMOIGNAGES ────────────────────────
+      <blockquote> = citation d'une source externe.
+      <cite> = source ou auteur de la citation.
+      C'est la balise sémantique correcte pour les témoignages.
+    ──────────────────────────────────────────────────── -->
+    <section class="section fond-gris" aria-labelledby="titre-temo">
+      <div class="conteneur">
+        <div class="entete-section">
+          <span class="etiquette">Ils nous font confiance</span>
+          <h2 id="titre-temo">Ce que disent nos clients</h2>
+        </div>
+
+        <div class="grille-3">
+
+          <article class="carte-temoignage a-reveler">
+            <div class="etoiles" aria-label="5 étoiles sur 5">★★★★★</div>
+            <blockquote>
+              <p class="temoignage-texte">
+                « Nexora a transformé notre présence en ligne. Notre site e-commerce
+                a vu ses ventes augmenter de 40% en 3 mois. Équipe réactive et
+                professionnelle. »
+              </p>
+            </blockquote>
+            <div class="temoignage-auteur">
+              <div class="avatar-ini" aria-hidden="true">FB</div>
+              <div>
+                <cite class="temo-nom">Fatima Benali</cite>
+                <p class="temo-poste">Directrice, Boutique Chérifienne</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="carte-temoignage a-reveler" style="transition-delay:0.1s">
+            <div class="etoiles" aria-label="5 étoiles sur 5">★★★★★</div>
+            <blockquote>
+              <p class="temoignage-texte">
+                « Notre application mobile a été livrée en avance sur le planning.
+                Le code est propre et maintenable. Je recommande Nexora à 100%. »
+              </p>
+            </blockquote>
+            <div class="temoignage-auteur">
+              <div class="avatar-ini" aria-hidden="true">YA</div>
+              <div>
+                <cite class="temo-nom">Youssef Alami</cite>
+                <p class="temo-poste">CEO, LogiMaroc</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="carte-temoignage a-reveler" style="transition-delay:0.2s">
+            <div class="etoiles" aria-label="4 étoiles sur 5">★★★★☆</div>
+            <blockquote>
+              <p class="temoignage-texte">
+                « L'intégration cloud réalisée par Nexora a réduit nos coûts
+                d'infrastructure de 60%. Un excellent rapport qualité/prix. »
+              </p>
+            </blockquote>
+            <div class="temoignage-auteur">
+              <div class="avatar-ini" aria-hidden="true">SE</div>
+              <div>
+                <cite class="temo-nom">Sara El Fassi</cite>
+                <p class="temo-poste">DSI, FinTech Maroc</p>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ── SECTION 6 : CTA (Appel à l'action) ─────────── -->
+    <section class="section fond-noir" aria-labelledby="titre-cta" style="text-align:center">
+      <div class="conteneur">
+        <span class="etiquette">Prêt à démarrer ?</span>
+        <h2 id="titre-cta" style="color:var(--blanc);margin-bottom:1rem">
+          Donnons vie à votre projet
+        </h2>
+        <p style="max-width:500px;margin:0 auto 2rem;font-size:1.05rem">
+          Contactez-nous aujourd'hui pour un devis gratuit et personnalisé.
+        </p>
+        <a href="pages/contact.html" class="btn btn-primaire">Démarrer un projet</a>
+      </div>
+    </section>
+
+  </main><!-- fin main -->
+
+
+  <!-- ══════════════ FOOTER ══════════════
+    <footer> = balise sémantique pour le pied de page.
+    Contient : plan du site + mentions légales + copyright
+  ═══════════════════════════════════════ -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="footer-grille">
+
+      <!-- Colonne 1 : Marque -->
+      <div class="footer-marque">
+        <a href="index.html" class="logo">Nexora<span>.</span></a>
+        <p>
+          Agence digitale basée à Casablanca, spécialisée en développement web,
+          applications mobiles et solutions cloud.
+        </p>
+      </div>
+
+      <!-- Colonne 2 : Plan du site -->
+      <!-- aria-label décrit la navigation pour les lecteurs d'écran -->
+      <nav class="footer-col" aria-label="Plan du site">
+        <h4>Plan du site</h4>
+        <ul>
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="pages/about.html">À propos</a></li>
+          <li><a href="pages/services.html">Services</a></li>
+          <li><a href="pages/gallery.html">Galerie</a></li>
+          <li><a href="pages/contact.html">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Colonne 3 : Services -->
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="pages/services.html">Développement Web</a></li>
+          <li><a href="pages/services.html">Applications Mobiles</a></li>
+          <li><a href="pages/services.html">Cloud & DevOps</a></li>
+          <li><a href="pages/services.html">Data & Analytics</a></li>
+          <li><a href="pages/services.html">SEO & Marketing</a></li>
+        </ul>
+      </div>
+
+      <!-- Colonne 4 : Contact -->
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:hello@nexora.ma">hello@nexora.ma</a></li>
+          <li><a href="tel:+212522000000">+212 522 00 00 00</a></li>
+          <li><a href="#">Casablanca, Maroc</a></li>
+          <li><a href="pages/contact.html">Formulaire de contact</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Barre du bas : copyright + mentions légales -->
+    <div class="footer-bas">
+      <p>© 2025 Nexora — TP3 HTML5 &amp; CSS3 · Nada Elhattab · ENSET</p>
+      <div style="display:flex;gap:1.5rem">
+        <!-- Mentions légales obligatoires -->
+        <a href="#">Mentions légales</a>
+        <a href="#">Politique de confidentialité</a>
+        <a href="#">CGU</a>
+        <!-- Lien retour vers la liste des TPs -->
+        <a href="../index.html">Retour TPs</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ── SCRIPT JS ────────────────────────────────────────
+    Placé AVANT </body> pour s'exécuter après le chargement
+    de tout le HTML (sinon les éléments n'existent pas encore).
+  ──────────────────────────────────────────────────────── -->
+  <script src="js/main.js"></script>
+
+</body>
+</html>

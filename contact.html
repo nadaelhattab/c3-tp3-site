@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact – NovaTech Maroc</title>
+  <meta name="description" content="Contactez NovaTech Maroc pour obtenir votre devis gratuit et personnalisé.">
+  <meta property="og:title" content="Contact – NovaTech Maroc">
+  <meta property="og:description" content="Contactez-nous pour votre projet digital.">
+  <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <a href="#main" class="skip-link">Aller au contenu principal</a>
+
+  <header class="site-header" role="banner">
+    <div class="container nav-container">
+      <a href="index.html" class="nav-logo" aria-label="NovaTech Maroc - Accueil">
+        <span class="logo-mark" aria-hidden="true">NT</span>NovaTech<span>.</span>
+      </a>
+      <nav class="nav-links" aria-label="Navigation principale">
+        <a href="index.html">Accueil</a>
+        <a href="about.html">À propos</a>
+        <a href="services.html">Services</a>
+        <a href="gallery.html">Galerie</a>
+        <a href="contact.html" class="active" aria-current="page">Contact</a>
+      </nav>
+      <a href="contact.html" class="btn btn-nav">Devis gratuit</a>
+      <button class="nav-toggle" aria-label="Ouvrir/fermer le menu" aria-expanded="false" aria-controls="nav-mobile">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <nav id="nav-mobile" class="nav-mobile" aria-label="Menu mobile" hidden>
+      <a href="index.html">Accueil</a>
+      <a href="about.html">À propos</a>
+      <a href="services.html">Services</a>
+      <a href="gallery.html">Galerie</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main id="main">
+
+    <section class="page-hero" aria-labelledby="contact-title">
+      <div class="container">
+        <span class="section-kicker" style="display:block;margin-bottom:.75rem">Parlons de votre projet</span>
+        <h1 id="contact-title">Contactez-nous</h1>
+        <p style="color:var(--muted);max-width:540px;margin-top:.75rem">
+          Remplissez le formulaire ci-dessous et nous vous répondrons dans les 24h ouvrées.
+        </p>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="contact-form-title">
+      <div class="container">
+        <div class="contact-grid">
+
+          <!-- FORMULAIRE -->
+          <div class="contact-form-card">
+            <h2 id="contact-form-title">Envoyer un message</h2>
+            <p>Tous les champs marqués <span style="color:var(--error)">*</span> sont obligatoires.</p>
+
+            <form class="contact-form" id="contact-form" novalidate aria-label="Formulaire de contact NovaTech">
+              <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem">
+                <div class="field">
+                  <label for="c-nom">Nom <span style="color:var(--error)" aria-label="requis">*</span></label>
+                  <input type="text" id="c-nom" name="nom"
+                         placeholder="El Amrani" required
+                         minlength="2" autocomplete="family-name"
+                         aria-required="true">
+                </div>
+                <div class="field">
+                  <label for="c-prenom">Prénom <span style="color:var(--error)" aria-label="requis">*</span></label>
+                  <input type="text" id="c-prenom" name="prenom"
+                         placeholder="Karim" required
+                         minlength="2" autocomplete="given-name"
+                         aria-required="true">
+                </div>
+              </div>
+
+              <div class="field">
+                <label for="c-email">Email <span style="color:var(--error)" aria-label="requis">*</span></label>
+                <input type="email" id="c-email" name="email"
+                       placeholder="karim@exemple.ma" required
+                       autocomplete="email"
+                       aria-required="true">
+              </div>
+
+              <div class="field">
+                <label for="c-tel">Téléphone</label>
+                <input type="tel" id="c-tel" name="telephone"
+                       placeholder="06 12 34 56 78"
+                       pattern="^(0[5-7][0-9]{8}|(\+212)[5-7][0-9]{8})$"
+                       autocomplete="tel"
+                       aria-describedby="c-tel-hint">
+                <span style="font-size:.75rem;color:var(--muted)" id="c-tel-hint">Format marocain : 06/07/05XXXXXXXX</span>
+              </div>
+
+              <div class="field">
+                <label for="c-service">Service souhaité <span style="color:var(--error)" aria-label="requis">*</span></label>
+                <select id="c-service" name="service" required aria-required="true">
+                  <option value="" disabled selected>Sélectionnez un service</option>
+                  <option value="web">Développement Web</option>
+                  <option value="mobile">Application Mobile</option>
+                  <option value="cloud">Cloud &amp; DevOps</option>
+                  <option value="seo">SEO &amp; Marketing Digital</option>
+                  <option value="design">Design UI/UX</option>
+                  <option value="cybersec">Cybersécurité</option>
+                  <option value="autre">Autre</option>
+                </select>
+              </div>
+
+              <div class="field">
+                <label for="c-budget">Budget estimé</label>
+                <select id="c-budget" name="budget">
+                  <option value="" disabled selected>Fourchette de budget</option>
+                  <option value="<10k">Moins de 10 000 MAD</option>
+                  <option value="10-30k">10 000 – 30 000 MAD</option>
+                  <option value="30-50k">30 000 – 50 000 MAD</option>
+                  <option value="50k+">50 000 MAD et plus</option>
+                  <option value="nsp">Je ne sais pas encore</option>
+                </select>
+              </div>
+
+              <div class="field">
+                <label for="c-message">Message <span style="color:var(--error)" aria-label="requis">*</span></label>
+                <textarea id="c-message" name="message"
+                          rows="5" required
+                          minlength="20" maxlength="1000"
+                          placeholder="Décrivez votre projet, vos besoins, vos contraintes…"
+                          aria-required="true"
+                          aria-describedby="c-msg-count"></textarea>
+                <span style="text-align:right;font-size:.72rem;color:var(--muted)" 
+                      id="c-msg-count" aria-live="polite">0 / 1000</span>
+              </div>
+
+              <div style="display:flex;align-items:flex-start;gap:.75rem;margin-bottom:1.5rem">
+                <input type="checkbox" id="c-rgpd" name="rgpd" required aria-required="true"
+                       style="width:18px;height:18px;flex-shrink:0;margin-top:2px;accent-color:var(--primary)">
+                <label for="c-rgpd" style="font-size:.85rem;font-weight:400;cursor:pointer">
+                  J'accepte que mes données soient traitées conformément à la 
+                  <a href="#">politique de confidentialité</a> de NovaTech Maroc. <span style="color:var(--error)">*</span>
+                </label>
+              </div>
+
+              <button type="submit">
+                Envoyer le message
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="vertical-align:-2px;margin-left:.4rem" aria-hidden="true">
+                  <line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/>
+                </svg>
+              </button>
+
+              <div id="form-success" role="alert" style="display:none;margin-top:1.25rem;background:#d1fae5;border:1.5px solid #6ee7b7;border-radius:10px;padding:1rem 1.25rem;color:#065f46;font-size:.9rem">
+                ✓ <strong>Message envoyé !</strong> Nous vous répondrons dans les 24h ouvrées.
+              </div>
+            </form>
+          </div>
+
+          <!-- INFOS CONTACT -->
+          <div>
+            <div class="contact-info">
+              <h2>Informations de contact</h2>
+
+              <div class="contact-detail">
+                <div class="contact-detail-icon" aria-hidden="true">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
+                  </svg>
+                </div>
+                <div class="contact-detail-text">
+                  <strong>Adresse</strong>
+                  <p>123 Boulevard Mohammed V<br>Casablanca 20000, Maroc</p>
+                </div>
+              </div>
+
+              <div class="contact-detail">
+                <div class="contact-detail-icon" aria-hidden="true">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.59 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
+                  </svg>
+                </div>
+                <div class="contact-detail-text">
+                  <strong>Téléphone</strong>
+                  <p><a href="tel:+212522000000">+212 522 00 00 00</a></p>
+                </div>
+              </div>
+
+              <div class="contact-detail">
+                <div class="contact-detail-icon" aria-hidden="true">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>
+                  </svg>
+                </div>
+                <div class="contact-detail-text">
+                  <strong>Email</strong>
+                  <p><a href="mailto:hello@novatech.ma">hello@novatech.ma</a></p>
+                </div>
+              </div>
+
+              <div class="contact-detail">
+                <div class="contact-detail-icon" aria-hidden="true">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+                  </svg>
+                </div>
+                <div class="contact-detail-text">
+                  <strong>Horaires</strong>
+                  <p>Lun – Ven : 09h00 – 18h00<br>Sam : 09h00 – 13h00</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Carte Google Maps -->
+            <div class="map-wrap">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3323.853!2d-7.6099!3d33.5928!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xda7cd4778aa113b%3A0xb06c1d84f310fd3!2sBoulevard%20Mohammed%20V%2C%20Casablanca!5e0!3m2!1sfr!2sma!4v1700000000000!5m2!1sfr!2sma"
+                width="100%" height="250"
+                style="border:0;" allowfullscreen="" loading="lazy"
+                title="Localisation NovaTech Maroc – 123 Boulevard Mohammed V, Casablanca"
+                referrerpolicy="no-referrer-when-downgrade"
+                aria-label="Carte Google Maps indiquant la localisation de NovaTech Maroc à Casablanca"
+              ></iframe>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="nav-logo" aria-label="NovaTech Maroc">
+          <span class="logo-mark" aria-hidden="true">NT</span>NovaTech<span>.</span>
+        </a>
+        <p>Agence digitale marocaine, partenaire de votre transformation numérique.</p>
+      </div>
+      <nav class="footer-nav" aria-label="Plan du site">
+        <h3>Navigation</h3>
+        <ul>
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="about.html">À propos</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="gallery.html">Galerie</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="footer-contact">
+        <h3>Contact</h3>
+        <p>📍 123 Bd Mohammed V, Casablanca</p>
+        <p>📞 <a href="tel:+212522000000">+212 522 00 00 00</a></p>
+        <p>✉️ <a href="mailto:hello@novatech.ma">hello@novatech.ma</a></p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 NovaTech Maroc — TP3 HTML5 &amp; CSS3 · <a href="/">Retour à l'accueil c3-az-daaif</a></p>
+      <p><a href="#">Mentions légales</a> · <a href="#">Politique de confidentialité</a></p>
+    </div>
+  </footer>
+
+  <script>
+    const toggle = document.querySelector('.nav-toggle');
+    const mobileNav = document.getElementById('nav-mobile');
+    toggle.addEventListener('click', () => {
+      const expanded = toggle.getAttribute('aria-expanded') === 'true';
+      toggle.setAttribute('aria-expanded', String(!expanded));
+      mobileNav.hidden = expanded;
+    });
+
+    // Compteur textarea
+    const msg = document.getElementById('c-message');
+    const msgCount = document.getElementById('c-msg-count');
+    msg.addEventListener('input', () => {
+      msgCount.textContent = `${msg.value.length} / 1000`;
+    });
+
+    // Submit
+    const form = document.getElementById('contact-form');
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      if (form.checkValidity()) {
+        document.getElementById('form-success').style.display = 'block';
+        form.reset();
+        msgCount.textContent = '0 / 1000';
+        document.getElementById('form-success').scrollIntoView({ behavior: 'smooth' });
+      } else {
+        form.reportValidity();
+      }
+    });
+  </script>
+</body>
+</html>

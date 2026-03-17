@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services – NovaTech Maroc</title>
+  <meta name="description" content="Découvrez tous les services de NovaTech Maroc : développement web, mobile, conseil, SEO et plus.">
+  <meta property="og:title" content="Services – NovaTech Maroc">
+  <meta property="og:description" content="Solutions web, mobile, cloud et marketing digital.">
+  <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <a href="#main" class="skip-link">Aller au contenu principal</a>
+
+  <header class="site-header" role="banner">
+    <div class="container nav-container">
+      <a href="index.html" class="nav-logo" aria-label="NovaTech Maroc - Accueil">
+        <span class="logo-mark" aria-hidden="true">NT</span>NovaTech<span>.</span>
+      </a>
+      <nav class="nav-links" aria-label="Navigation principale">
+        <a href="index.html">Accueil</a>
+        <a href="about.html">À propos</a>
+        <a href="services.html" class="active" aria-current="page">Services</a>
+        <a href="gallery.html">Galerie</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <a href="contact.html" class="btn btn-nav">Devis gratuit</a>
+      <button class="nav-toggle" aria-label="Ouvrir/fermer le menu" aria-expanded="false" aria-controls="nav-mobile">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <nav id="nav-mobile" class="nav-mobile" aria-label="Menu mobile" hidden>
+      <a href="index.html">Accueil</a>
+      <a href="about.html">À propos</a>
+      <a href="services.html">Services</a>
+      <a href="gallery.html">Galerie</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main id="main">
+
+    <section class="page-hero" aria-labelledby="services-title">
+      <div class="container">
+        <span class="section-kicker" style="display:block;margin-bottom:.75rem">Ce que nous faisons</span>
+        <h1 id="services-title">Nos services</h1>
+        <p style="color:var(--muted);max-width:540px;margin-top:.75rem">
+          Des solutions digitales complètes, de la stratégie au déploiement, pour propulser votre activité en ligne.
+        </p>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="services-detail-title">
+      <div class="container">
+        <div class="section-head">
+          <h2 id="services-detail-title">Tout ce que nous faisons pour vous</h2>
+          <p>Cliquez sur chaque service pour en savoir plus.</p>
+        </div>
+
+        <div class="services-details">
+
+          <details class="service-detail" open>
+            <summary>🌐 Développement Web</summary>
+            <div class="service-detail-body">
+              <p>
+                Nous concevons et développons des sites web et applications web sur mesure, 
+                en utilisant les technologies les plus récentes et les meilleures pratiques du secteur.
+              </p>
+              <ul>
+                <li>Sites vitrines responsive (HTML5, CSS3, JavaScript)</li>
+                <li>E-commerce (WooCommerce, Shopify, Next.js)</li>
+                <li>Applications web complexes (React, Vue, Angular)</li>
+                <li>API REST et GraphQL (Node.js, Express, Laravel)</li>
+                <li>Optimisation des performances (Core Web Vitals)</li>
+                <li>Hébergement et déploiement (AWS, Vercel, OVH)</li>
+              </ul>
+            </div>
+          </details>
+
+          <details class="service-detail">
+            <summary>📱 Applications Mobiles</summary>
+            <div class="service-detail-body">
+              <p>
+                Applications mobiles natives ou cross-platform, conçues pour offrir une expérience 
+                utilisateur fluide et performante sur iOS et Android.
+              </p>
+              <ul>
+                <li>React Native pour applications cross-platform</li>
+                <li>Flutter pour une performance native</li>
+                <li>Intégration API et services tiers</li>
+                <li>Publication App Store &amp; Google Play</li>
+                <li>Maintenance et mises à jour continues</li>
+              </ul>
+            </div>
+          </details>
+
+          <details class="service-detail">
+            <summary>☁️ Cloud &amp; DevOps</summary>
+            <div class="service-detail-body">
+              <p>
+                Nous accompagnons les entreprises dans leur migration vers le cloud et la mise en place 
+                de pipelines CI/CD modernes pour accélérer les cycles de livraison.
+              </p>
+              <ul>
+                <li>Architecture cloud (AWS, Azure, GCP)</li>
+                <li>Containerisation avec Docker et Kubernetes</li>
+                <li>CI/CD pipelines (GitHub Actions, GitLab CI)</li>
+                <li>Monitoring et observabilité</li>
+                <li>Sécurité et conformité RGPD</li>
+              </ul>
+            </div>
+          </details>
+
+          <details class="service-detail">
+            <summary>📊 SEO &amp; Marketing Digital</summary>
+            <div class="service-detail-body">
+              <p>
+                Augmentez votre visibilité en ligne et attirez des clients qualifiés grâce 
+                à nos stratégies de référencement et de marketing digital sur mesure.
+              </p>
+              <ul>
+                <li>Audit SEO technique et sémantique</li>
+                <li>Stratégie de contenu et netlinking</li>
+                <li>Google Ads et Meta Ads</li>
+                <li>Analyse de données et reporting (GA4, Looker Studio)</li>
+                <li>Email marketing et automation</li>
+              </ul>
+            </div>
+          </details>
+
+          <details class="service-detail">
+            <summary>🎨 Design UI/UX</summary>
+            <div class="service-detail-body">
+              <p>
+                Nous créons des interfaces digitales esthétiques et fonctionnelles, centrées sur 
+                l'expérience utilisateur et les standards d'accessibilité web.
+              </p>
+              <ul>
+                <li>Research UX et personas</li>
+                <li>Wireframing et prototypage (Figma)</li>
+                <li>Design system et composants réutilisables</li>
+                <li>Tests utilisateurs et itérations</li>
+                <li>Conformité WCAG 2.1 AA</li>
+              </ul>
+            </div>
+          </details>
+
+          <details class="service-detail">
+            <summary>🛡️ Conseil en Cybersécurité</summary>
+            <div class="service-detail-body">
+              <p>
+                Protégez votre présence digitale et vos données avec nos audits de sécurité 
+                et nos recommandations adaptées à votre contexte.
+              </p>
+              <ul>
+                <li>Audit de sécurité des applications web</li>
+                <li>Tests de pénétration (penetration testing)</li>
+                <li>Mise en conformité RGPD</li>
+                <li>Formation sensibilisation équipes</li>
+                <li>Plan de réponse aux incidents</li>
+              </ul>
+            </div>
+          </details>
+
+        </div>
+
+        <div style="text-align:center;margin-top:3rem">
+          <a href="contact.html" class="btn btn-primary">Demander un devis gratuit</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="nav-logo" aria-label="NovaTech Maroc">
+          <span class="logo-mark" aria-hidden="true">NT</span>NovaTech<span>.</span>
+        </a>
+        <p>Agence digitale marocaine, partenaire de votre transformation numérique.</p>
+      </div>
+      <nav class="footer-nav" aria-label="Plan du site">
+        <h3>Navigation</h3>
+        <ul>
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="about.html">À propos</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="gallery.html">Galerie</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="footer-contact">
+        <h3>Contact</h3>
+        <p>📍 123 Bd Mohammed V, Casablanca</p>
+        <p>📞 <a href="tel:+212522000000">+212 522 00 00 00</a></p>
+        <p>✉️ <a href="mailto:hello@novatech.ma">hello@novatech.ma</a></p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 NovaTech Maroc — TP3 HTML5 &amp; CSS3 · <a href="/">Retour à l'accueil c3-az-daaif</a></p>
+      <p><a href="#">Mentions légales</a> · <a href="#">Politique de confidentialité</a></p>
+    </div>
+  </footer>
+
+  <script>
+    const toggle = document.querySelector('.nav-toggle');
+    const mobileNav = document.getElementById('nav-mobile');
+    toggle.addEventListener('click', () => {
+      const expanded = toggle.getAttribute('aria-expanded') === 'true';
+      toggle.setAttribute('aria-expanded', String(!expanded));
+      mobileNav.hidden = expanded;
+    });
+  </script>
+</body>
+</html>

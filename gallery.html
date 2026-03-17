@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Galerie – NovaTech Maroc</title>
+  <meta name="description" content="Découvrez nos réalisations : sites web, applications mobiles et interfaces digitales.">
+  <meta property="og:title" content="Galerie – NovaTech Maroc">
+  <meta property="og:description" content="Portfolio de réalisations de NovaTech Maroc.">
+  <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .gallery-placeholder {
+      width: 100%; aspect-ratio: 4/3;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      gap: 0.5rem;
+      font-size: 0.78rem; font-weight: 600;
+      text-transform: uppercase; letter-spacing: 0.08em;
+      color: rgba(255,255,255,0.6);
+      transition: transform 0.4s ease;
+      border-radius: 0;
+    }
+    .gallery-item:hover .gallery-placeholder { transform: scale(1.05); }
+    .gallery-placeholder span { font-size: 2.5rem; }
+
+    .g1  { background: linear-gradient(135deg, #1e3a5f, #2563eb); }
+    .g2  { background: linear-gradient(135deg, #064e3b, #059669); }
+    .g3  { background: linear-gradient(135deg, #4a1d96, #7c3aed); }
+    .g4  { background: linear-gradient(135deg, #7c2d12, #ea580c); }
+    .g5  { background: linear-gradient(135deg, #1e1b4b, #4f46e5); }
+    .g6  { background: linear-gradient(135deg, #0f172a, #0891b2); }
+    .g7  { background: linear-gradient(135deg, #14532d, #16a34a); }
+    .g8  { background: linear-gradient(135deg, #450a0a, #dc2626); }
+    .g9  { background: linear-gradient(135deg, #1c1917, #78716c); }
+
+    .filter-bar {
+      display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 2.5rem; justify-content: center;
+    }
+    .filter-btn {
+      background: var(--bg); border: 1.5px solid var(--border);
+      border-radius: 100px; padding: 0.4rem 1.1rem;
+      font-family: inherit; font-size: 0.82rem; font-weight: 700;
+      color: var(--text); cursor: pointer;
+      transition: all 0.2s;
+    }
+    .filter-btn.active,
+    .filter-btn:hover {
+      background: var(--primary); color: #fff; border-color: var(--primary);
+    }
+  </style>
+</head>
+<body>
+
+  <a href="#main" class="skip-link">Aller au contenu principal</a>
+
+  <header class="site-header" role="banner">
+    <div class="container nav-container">
+      <a href="index.html" class="nav-logo" aria-label="NovaTech Maroc - Accueil">
+        <span class="logo-mark" aria-hidden="true">NT</span>NovaTech<span>.</span>
+      </a>
+      <nav class="nav-links" aria-label="Navigation principale">
+        <a href="index.html">Accueil</a>
+        <a href="about.html">À propos</a>
+        <a href="services.html">Services</a>
+        <a href="gallery.html" class="active" aria-current="page">Galerie</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <a href="contact.html" class="btn btn-nav">Devis gratuit</a>
+      <button class="nav-toggle" aria-label="Ouvrir/fermer le menu" aria-expanded="false" aria-controls="nav-mobile">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <nav id="nav-mobile" class="nav-mobile" aria-label="Menu mobile" hidden>
+      <a href="index.html">Accueil</a>
+      <a href="about.html">À propos</a>
+      <a href="services.html">Services</a>
+      <a href="gallery.html">Galerie</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main id="main">
+
+    <section class="page-hero" aria-labelledby="gallery-title">
+      <div class="container">
+        <span class="section-kicker" style="display:block;margin-bottom:.75rem">Nos réalisations</span>
+        <h1 id="gallery-title">Galerie de projets</h1>
+        <p style="color:var(--muted);max-width:540px;margin-top:.75rem">
+          Un aperçu de nos derniers projets : sites web, applications mobiles et interfaces UI/UX.
+        </p>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="gallery-section-title">
+      <div class="container">
+        <h2 id="gallery-section-title" class="sr-only">Galerie de projets</h2>
+
+        <!-- Filtres -->
+        <div class="filter-bar" role="group" aria-label="Filtrer les projets">
+          <button class="filter-btn active" data-filter="all">Tous</button>
+          <button class="filter-btn" data-filter="web">Web</button>
+          <button class="filter-btn" data-filter="mobile">Mobile</button>
+          <button class="filter-btn" data-filter="ui">UI/UX</button>
+        </div>
+
+        <!-- Galerie -->
+        <div class="gallery-grid" id="gallery-grid" aria-label="Galerie de projets">
+
+          <div class="gallery-item" data-cat="web">
+            <picture>
+              <source media="(min-width: 600px)" srcset="images/proj1-lg.jpg" type="image/jpeg">
+              <img 
+                src="images/proj1-sm.jpg" 
+                alt="Site e-commerce Boutique Chérifienne – interface produits responsive"
+                loading="lazy"
+                width="400" height="300"
+                onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"
+              >
+            </picture>
+            <div class="gallery-placeholder g1" style="display:none">
+              <span>🛍️</span>
+              E-commerce
+            </div>
+            <div class="gallery-caption">Boutique Chérifienne – E-commerce</div>
+          </div>
+
+          <div class="gallery-item" data-cat="mobile">
+            <picture>
+              <source media="(min-width: 600px)" srcset="images/proj2-lg.jpg" type="image/jpeg">
+              <img 
+                src="images/proj2-sm.jpg" 
+                alt="Application mobile LogiMaroc – tableau de bord de livraisons"
+                loading="lazy"
+                width="400" height="300"
+                onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"
+              >
+            </picture>
+            <div class="gallery-placeholder g2" style="display:none">
+              <span>🚚</span>
+              App Mobile
+            </div>
+            <div class="gallery-caption">LogiMaroc – Application de livraison</div>
+          </div>
+
+          <div class="gallery-item" data-cat="ui">
+            <picture>
+              <source media="(min-width: 600px)" srcset="images/proj3-lg.jpg" type="image/jpeg">
+              <img 
+                src="images/proj3-sm.jpg" 
+                alt="Interface dashboard analytics pour Riad Prestige"
+                loading="lazy"
+                width="400" height="300"
+                onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"
+              >
+            </picture>
+            <div class="gallery-placeholder g3" style="display:none">
+              <span>📊</span>
+              Dashboard
+            </div>
+            <div class="gallery-caption">Riad Prestige – Dashboard Analytics</div>
+          </div>
+
+          <div class="gallery-item" data-cat="web">
+            <picture>
+              <source media="(min-width: 600px)" srcset="images/proj4-lg.jpg" type="image/jpeg">
+              <img 
+                src="images/proj4-sm.jpg" 
+                alt="Site vitrine AgriMaroc – page d'accueil"
+                loading="lazy"
+                width="400" height="300"
+                onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"
+              >
+            </picture>
+            <div class="gallery-placeholder g4" style="display:none">
+              <span>🌾</span>
+              Site Vitrine
+            </div>
+            <div class="gallery-caption">AgriMaroc – Site vitrine</div>
+          </div>
+
+          <div class="gallery-item" data-cat="mobile">
+            <picture>
+              <source media="(min-width: 600px)" srcset="images/proj5-lg.jpg" type="image/jpeg">
+              <img 
+                src="images/proj5-sm.jpg" 
+                alt="Application RH EduLearn – liste des collaborateurs"
+                loading="lazy"
+                width="400" height="300"
+                onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"
+              >
+            </picture>
+            <div class="gallery-placeholder g5" style="display:none">
+              <span>📚</span>
+              App Formation
+            </div>
+            <div class="gallery-caption">EduLearn – Application de formation</div>
+          </div>
+
+          <div class="gallery-item" data-cat="web">
+            <picture>
+              <source media="(min-width: 600px)" srcset="images/proj6-lg.jpg" type="image/jpeg">
+              <img 
+                src="images/proj6-sm.jpg" 
+                alt="Plateforme SaaS FinTech Maroc – interface de paiement"
+                loading="lazy"
+                width="400" height="300"
+                onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"
+              >
+            </picture>
+            <div class="gallery-placeholder g6" style="display:none">
+              <span>💳</span>
+              FinTech
+            </div>
+            <div class="gallery-caption">FinTech Maroc – Plateforme de paiement</div>
+          </div>
+
+          <div class="gallery-item" data-cat="ui">
+            <picture>
+              <source media="(min-width: 600px)" srcset="images/proj7-lg.jpg" type="image/jpeg">
+              <img 
+                src="images/proj7-sm.jpg" 
+                alt="Design system HealthCare+ – composants UI"
+                loading="lazy"
+                width="400" height="300"
+                onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"
+              >
+            </picture>
+            <div class="gallery-placeholder g7" style="display:none">
+              <span>🏥</span>
+              Design System
+            </div>
+            <div class="gallery-caption">HealthCare+ – Design System</div>
+          </div>
+
+          <div class="gallery-item" data-cat="web">
+            <picture>
+              <source media="(min-width: 600px)" srcset="images/proj8-lg.jpg" type="image/jpeg">
+              <img 
+                src="images/proj8-sm.jpg" 
+                alt="Blog immobilier Casa Immo – article de blog"
+                loading="lazy"
+                width="400" height="300"
+                onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"
+              >
+            </picture>
+            <div class="gallery-placeholder g8" style="display:none">
+              <span>🏠</span>
+              Immobilier
+            </div>
+            <div class="gallery-caption">Casa Immo – Portail immobilier</div>
+          </div>
+
+          <div class="gallery-item" data-cat="ui">
+            <picture>
+              <source media="(min-width: 600px)" srcset="images/proj9-lg.jpg" type="image/jpeg">
+              <img 
+                src="images/proj9-sm.jpg" 
+                alt="Application de réservation TravelMa – interface de recherche"
+                loading="lazy"
+                width="400" height="300"
+                onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"
+              >
+            </picture>
+            <div class="gallery-placeholder g9" style="display:none">
+              <span>✈️</span>
+              Voyage
+            </div>
+            <div class="gallery-caption">TravelMa – Réservation en ligne</div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Intégration iframe YouTube/vidéo -->
+    <section class="section bg-light" aria-labelledby="demo-title">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-kicker">Démo en vidéo</span>
+          <h2 id="demo-title">Notre processus de création</h2>
+        </div>
+        <div style="max-width:700px;margin:0 auto;border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-lg)">
+          <iframe
+            width="100%"
+            height="394"
+            src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+            title="NovaTech Maroc – Présentation du processus de création"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+            loading="lazy"
+            aria-label="Vidéo de présentation de NovaTech Maroc sur YouTube"
+          ></iframe>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="nav-logo" aria-label="NovaTech Maroc">
+          <span class="logo-mark" aria-hidden="true">NT</span>NovaTech<span>.</span>
+        </a>
+        <p>Agence digitale marocaine, partenaire de votre transformation numérique.</p>
+      </div>
+      <nav class="footer-nav" aria-label="Plan du site">
+        <h3>Navigation</h3>
+        <ul>
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="about.html">À propos</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="gallery.html">Galerie</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="footer-contact">
+        <h3>Contact</h3>
+        <p>📍 123 Bd Mohammed V, Casablanca</p>
+        <p>📞 <a href="tel:+212522000000">+212 522 00 00 00</a></p>
+        <p>✉️ <a href="mailto:hello@novatech.ma">hello@novatech.ma</a></p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 NovaTech Maroc — TP3 HTML5 &amp; CSS3 · <a href="/">Retour à l'accueil c3-az-daaif</a></p>
+      <p><a href="#">Mentions légales</a> · <a href="#">Politique de confidentialité</a></p>
+    </div>
+  </footer>
+
+  <script>
+    // Burger menu
+    const toggle = document.querySelector('.nav-toggle');
+    const mobileNav = document.getElementById('nav-mobile');
+    toggle.addEventListener('click', () => {
+      const expanded = toggle.getAttribute('aria-expanded') === 'true';
+      toggle.setAttribute('aria-expanded', String(!expanded));
+      mobileNav.hidden = expanded;
+    });
+
+    // Show placeholders for all images with broken sources
+    document.querySelectorAll('.gallery-item img').forEach(img => {
+      img.addEventListener('error', function() {
+        this.style.display = 'none';
+        const placeholder = this.parentElement.nextElementSibling;
+        if (placeholder && placeholder.classList.contains('gallery-placeholder')) {
+          placeholder.style.display = 'flex';
+        }
+      });
+      // Trigger error if image not loaded (for placeholder images)
+      if (!img.src.includes('http')) {
+        img.dispatchEvent(new Event('error'));
+      }
+    });
+
+    // Gallery filter
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const items = document.querySelectorAll('.gallery-item');
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const filter = btn.dataset.filter;
+        items.forEach(item => {
+          item.style.display = (filter === 'all' || item.dataset.cat === filter) ? '' : 'none';
+        });
+      });
+    });
+
+    // Force show placeholders on page load
+    document.querySelectorAll('.gallery-item img').forEach(img => {
+      img.dispatchEvent(new Event('error'));
+    });
+  </script>
+
+</body>
+</html>
